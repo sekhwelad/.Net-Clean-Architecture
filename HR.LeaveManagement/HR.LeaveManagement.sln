@@ -3,9 +3,40 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33502.453
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{B270F572-4478-44A3-B0A7-3945A04D4281}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{3B54E992-46F4-443D-8FE9-729A00B31CF3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{D11A602A-F888-4220-AD1D-7B5FE41E0909}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "API", "API", "{B8BF6038-354B-4BFE-B537-572CF6C905E2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{5DA218AF-3CBD-4540-838C-77AA3097DD43}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{2610E73A-7208-42A8-8AB2-83FCE489CB98}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HR.LeaveManagement.Domain", "src\Core\HR.LeaveManagement.Domain\HR.LeaveManagement.Domain.csproj", "{647452E4-8138-479D-95EA-80FB959C5D7A}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{647452E4-8138-479D-95EA-80FB959C5D7A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{647452E4-8138-479D-95EA-80FB959C5D7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{647452E4-8138-479D-95EA-80FB959C5D7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{647452E4-8138-479D-95EA-80FB959C5D7A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D11A602A-F888-4220-AD1D-7B5FE41E0909} = {B270F572-4478-44A3-B0A7-3945A04D4281}
+		{B8BF6038-354B-4BFE-B537-572CF6C905E2} = {B270F572-4478-44A3-B0A7-3945A04D4281}
+		{5DA218AF-3CBD-4540-838C-77AA3097DD43} = {B270F572-4478-44A3-B0A7-3945A04D4281}
+		{2610E73A-7208-42A8-8AB2-83FCE489CB98} = {B270F572-4478-44A3-B0A7-3945A04D4281}
+		{647452E4-8138-479D-95EA-80FB959C5D7A} = {2610E73A-7208-42A8-8AB2-83FCE489CB98}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {509AB504-979D-48E0-B1A1-89751A2629D0}
