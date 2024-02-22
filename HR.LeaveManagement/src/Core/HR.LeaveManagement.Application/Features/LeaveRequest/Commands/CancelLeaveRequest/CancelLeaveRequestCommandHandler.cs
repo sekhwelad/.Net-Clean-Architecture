@@ -14,7 +14,7 @@ namespace HR.LeaveManagement.Application.Features.LeaveRequest.Commands.CancelLe
         private readonly IAppLogger<CancelLeaveRequestCommandHandler> _appLogger;
 
 
-        public CancelLeaveRequestCommandHandler(ILeaveRequestRepository leaveRequestRepository, IAppLogger<CancelLeaveRequestCommandHandler> appLogger,
+        public CancelLeaveRequestCommandHandler(ILeaveRequestRepository leaveRequestRepository, IAppLogger<CancelLeaveRequestCommandHandler> appLogger
             , IEmailSender emailSender)
         {
             _leaveRequestRepository = leaveRequestRepository;
