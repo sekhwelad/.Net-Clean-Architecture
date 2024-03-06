@@ -1,12 +1,18 @@
-﻿namespace HR.LeaveManagement.BlazorUI.Services.Base
+﻿using Blazored.LocalStorage;
+using System.Net.Http.Headers;
+
+namespace HR.LeaveManagement.BlazorUI.Services.Base
 {
     public class BaseHttpService
     {
         protected IClient _client;
+        protected readonly ILocalStorageService _localStorage;
 
-        public BaseHttpService(IClient client)
+        public BaseHttpService(IClient client, ILocalStorageService localStorage)
         {
             _client = client;
+            _localStorage = localStorage;   
+
         }
 
         protected Response<Guid> ConvertApiExceptions<Guid>(ApiException exception)
@@ -39,6 +45,15 @@
                     Success = false
                 };
             }
+        }
+
+        protected async Task AddBearerToken()
+        {
+            var xx = await _localStorage.ContainKeyAsync("token");
+
+            if (await _localStorage.ContainKeyAsync("token"))
+                _client.HttpClient.DefaultRequestHeaders.Authorization =
+                    new AuthenticationHeaderValue("Bearer", await _localStorage.GetItemAsync<string>("token"));
         }
     }
 }

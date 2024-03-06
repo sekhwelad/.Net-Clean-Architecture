@@ -31,7 +31,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HR.LeaveManagement.Persiste
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HR.LeaveManagement.BlazorUI", "src\UI\HR.LeaveManagement.BlazorUI\HR.LeaveManagement.BlazorUI.csproj", "{954C23E5-23D7-4E0B-AA1A-9FA86E4E52BE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HR.LeaveManagement.Identity", "src\Infrastructure\HR.LeaveManagement.Identity\HR.LeaveManagement.Identity.csproj", "{3DA8389F-0C7A-4FE1-8BD6-25076CC5A276}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HR.LeaveManagement.Identity", "src\Infrastructure\HR.LeaveManagement.Identity\HR.LeaveManagement.Identity.csproj", "{3DA8389F-0C7A-4FE1-8BD6-25076CC5A276}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
