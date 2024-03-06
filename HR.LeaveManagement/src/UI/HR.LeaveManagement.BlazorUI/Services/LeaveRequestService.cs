@@ -11,9 +11,10 @@ namespace HR.LeaveManagement.BlazorUI.Services
     {
         private readonly IMapper _mapper;
 
-        public LeaveRequestService(IClient client, IMapper mapper, ILocalStorageService localStorageService) : base(client, localStorageService)
+        public LeaveRequestService(IClient client, IMapper mapper, ILocalStorageService localStorageService) 
+            : base(client, localStorageService)
         {
-            this._mapper = mapper;
+            _mapper = mapper;
         }
 
         public async Task ApproveLeaveRequest(int id, bool approved)
@@ -34,6 +35,7 @@ namespace HR.LeaveManagement.BlazorUI.Services
         {
             try
             {
+                
                 var response = new Response<Guid>();
                 CreateLeaveRequestCommand createLeaveRequest = _mapper.Map<CreateLeaveRequestCommand>(leaveRequest);
 
@@ -85,6 +87,22 @@ namespace HR.LeaveManagement.BlazorUI.Services
             };
 
             return model;
+        }
+
+        public async Task<Response<Guid>> CancelLeaveRequest(int id)
+        {
+            try
+            {
+                var response = new Response<Guid>();
+                var request = new CancelLeaveRequestCommand { Id = id };
+                await _client.CancelRequestAsync(request);
+                return response;
+            }
+            catch (ApiException ex)
+            {
+                return ConvertApiExceptions<Guid>(ex);
+            }
+
         }
     }
 }

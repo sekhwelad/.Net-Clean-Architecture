@@ -1,4 +1,5 @@
-﻿using HR.LeaveManagement.Domain;
+﻿using HR.LeaveManagement.Application.Contracts.Identity;
+using HR.LeaveManagement.Domain;
 using HR.LeaveManagement.Persistence.DatabaseContext;
 using Microsoft.EntityFrameworkCore;
 using Shouldly;
@@ -8,13 +9,14 @@ namespace HR.LeaveManagement.Persistence.IntegrationTests
     public class HRDatabaseContextTests
     {
         private HRDatabaseContext _hrDatabaseContext;
+        private readonly IUserService _userService;
 
         public HRDatabaseContextTests()
         {
             var dbOptions = new DbContextOptionsBuilder<HRDatabaseContext>()
                 .UseInMemoryDatabase(Guid.NewGuid().ToString()).Options;
 
-            _hrDatabaseContext = new HRDatabaseContext(dbOptions);
+            _hrDatabaseContext = new HRDatabaseContext(dbOptions, _userService);
         }
 
         [Fact]

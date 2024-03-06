@@ -31,8 +31,6 @@ namespace HR.LeaveManagement.BlazorUI.Providers
             if (tokenContent.ValidTo > DateTime.Now)
             {
                 await localStorage.RemoveItemAsync("token");
-                var xx = await localStorage.ContainKeyAsync("token");
-
                 return new AuthenticationState(user);
             }
 
